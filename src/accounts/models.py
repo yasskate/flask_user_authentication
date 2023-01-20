@@ -13,7 +13,7 @@ class User(UserMixin, db.Model):
 
     def __init__(self, email, password, is_admin=False):
         self.email = email
-        self.password = bcrypt.generate_password_hash(passowrd)
+        self.password = bcrypt.generate_password_hash(password).decode("utf-8")
         self.created_on = datetime.now()
         self.is_admin = is_admin
 
